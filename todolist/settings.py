@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'todos.apps.TodosConfig',
+    'profiles.apps.ProfilesConfig',
+    'accounts',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -80,6 +86,30 @@ DATABASES = {
     }
 }
 
+# AbstarctUser model 지정
+AUTH_USER_MODEL = 'accounts.User' # AbstarctUser
+
+
+# Email 로그인 및 기타 설정 (allauth)
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+SOCIALACCOUNT_AUTO_SIGNUP = False
+ACCOUNT_EMAIL_VERIFICATION = None
+
+
+# Authentication Backends 설정
+AUTHENTICATION_BACKENDS = [
+    #'allauth' specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+SITE_ID = 1
+
+
+# Email 세팅 (이메일 인증, 비밀번호 찾기 등에 필요할 이메일 세팅, 아래 설정은 터미널로 발송)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -103,9 +133,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-kr' # 변경
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul' # 변경
 
 USE_I18N = True
 
