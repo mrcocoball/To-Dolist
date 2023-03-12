@@ -1,11 +1,13 @@
 from django.urls import path
-from todos import views
+from . import views
 
-app_name = 'todos'
-url_patterns = [
+urlpatterns = [
 
     # Example : /todos/
-    path('', views.TodoLV.as_view(), name='index'),
+    path('', views.TodoLV.as_view(), name="main"),
+
+    # Example: /todos/{id}/
+    path('<int:pk>/', views.TodoDV.as_view(), name="detail"),
 
     # Example : /todos/write/
     path('write/', views.TodoCreateView.as_view(), name="write"),
