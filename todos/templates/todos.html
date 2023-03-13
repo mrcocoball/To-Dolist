@@ -1,0 +1,33 @@
+<h1>ToDo list</h1>
+
+<a href="{% url 'todos:write' %}">ToDo 작성하기</a>
+
+{% for todo in todos %}
+    <p>{{ todo.description }}</p>
+    <a href='{{ todo.get_absolute_url }}'>[상세 보기]</a>
+    <p>{{ todo.created_at }}</p>
+    <p>{{ todo.is_complete }}</p>
+
+    {% if todo.owner == user %}
+
+    [<a href="./{{ todo.id }}/modify/">수정</a>]
+    [<a href="./{{ todo.id }}/delete/">삭제</a>]
+    [<a href="./{{ todo.id }}/complete/">완료</a>]
+
+    {% endif %}
+{% endfor %}
+
+<div>
+    <span>
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">Previous Page</a>
+
+        {% endif %}
+
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Next Page</a>
+        {% endif %}
+    </span>
+</div>

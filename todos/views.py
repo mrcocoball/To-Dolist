@@ -3,7 +3,10 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 from todos.models import Todo
+from todolist.views import OwnerOnlyMixin
 
 # ListView
 class TodoLV(ListView):
@@ -11,33 +14,56 @@ class TodoLV(ListView):
     model = Todo
     context_object_name = 'todos'
     paginate_by = 10
+    template_name = 'todos.html'
 
 
 # DetailView
 class TodoDV(DetailView):
 
     model = Todo
+    template_name = 'todos_detail.html'
 
 
 # CreateView
-class TodoCreateView(CreateView):
+class TodoCreateView(LoginRequiredMixin, CreateView):
 
     model = Todo
+    fields = ['description',]
+    success_url = reverse_lazy('todos:main')
+    template_name = 'todo_form.html'
+
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        return super().form_valid(form)
 
 
 # UpdateView
-class TodoUpdateView(UpdateView):
+class TodoUpdateView(OwnerOnlyMixin, UpdateView):
 
     model = Todo
+    fields = ['description',]
+    template_name = 'todo_form.html'
     
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        return super().form_valid(form)
 
 # etc
+def delete(request, pk):
 
-def delete(request, idx):
+    db_article = Todo.objects.get(id = pk)
 
-    db_article = Todo.objects.get(id = idx)
-    db_article.delete()
+    if request.user == db_article.owner:
+        db_article.delete()
 
-def complete(request, idx):
+    return HttpResponseRedirect(reverse('todos:main'))
 
-    db_article = Todo.objects.get(id = idx)
+
+def complete(request, pk):
+
+    db_article = Todo.objects.get(id = pk)
+
+    if request.user == db_article.owner:
+        db_article.change_complete()
+
+    return HttpResponseRedirect(reverse('todos:main'))

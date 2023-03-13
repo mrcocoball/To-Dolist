@@ -1,0 +1,14 @@
+<h1>ToDo create form</h1>
+
+{% block content %}
+
+<form action="." method="POST" id="todoWriteForm">
+{% csrf_token %}
+
+    {{ form }}
+
+    <button type="submit" form="todoWriteForm">등록</button>
+
+</form>
+
+{% endblock %}
