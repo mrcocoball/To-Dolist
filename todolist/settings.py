@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.kakao',
 ]
 
 MIDDLEWARE = [
@@ -101,7 +102,7 @@ ACCOUNT_EMAIL_VERIFICATION = None
 
 # Authentication Backends 설정
 AUTHENTICATION_BACKENDS = [
-    #'allauth' specific authentication methods, such as login by e-mail
+    'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 SITE_ID = 1
@@ -114,6 +115,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Custom Login Page
 ACCOUNT_SIGNUP_REDIRECT_URL = 'index'
 LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = '/'
 
 
 # Password validation
