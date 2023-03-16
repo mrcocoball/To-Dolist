@@ -1,33 +1,75 @@
-<h1>ToDo list</h1>
+{% extends 'base.html' %}
 
-<a href="{% url 'todos:write' %}">ToDo 작성하기</a>
+{% block title %}To-Dolist{% endblock %}
 
-{% for todo in todos %}
-    <p>{{ todo.description }}</p>
-    <a href='{{ todo.get_absolute_url }}'>[상세 보기]</a>
-    <p>{{ todo.created_at }}</p>
-    <p>{{ todo.is_complete }}</p>
-
-    {% if todo.owner == user %}
-
-    [<a href="./{{ todo.id }}/modify/">수정</a>]
-    [<a href="./{{ todo.id }}/delete/">삭제</a>]
-    [<a href="./{{ todo.id }}/complete/">완료</a>]
-
-    {% endif %}
-{% endfor %}
-
-<div>
-    <span>
-        {% if page_obj.has_previous %}
-            <a href="?page={{ page_obj.previous_page_number }}">Previous Page</a>
-
-        {% endif %}
-
-        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-
-        {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">Next Page</a>
-        {% endif %}
-    </span>
+{% block content %}
+<div class="todo_header">
+    <h2>ToDo list</h2>
+    <p>해야 할 일을 작성하고 일을 끝냈다면 완료 버튼을 눌러주세요!</p>
+    <div>
+        <a href="{% url 'todos:write' %}">
+            <button type="button" class="w-100 btn btn-create">ToDo 작성</button>     
+        </a>
+    </div>
 </div>
+
+<div class="todo_body">
+    <hr>
+    
+    {% for todo in todos %}
+    {% if todo.is_complete%}
+    <div class="p-6 rounded completed_todo">
+    {% else %}
+    <div class="p-6 rounded not_completed_todo">
+    {% endif %}
+        <div class="todo_box">
+            <small>{{ todo.created_at | date:"y-m-d"}}</small>
+            <a href='{{ todo.get_absolute_url }}'>
+                <h6>{{ todo.title }}</h6>
+            </a>
+            <div class="button_list">    
+                {% if todo.owner == user %}
+                
+                <a href="./{{ todo.id }}/modify/">
+                    <button type="button" class="btn btn-update">수정</button>
+                </a>
+                <a href="./{{ todo.id }}/delete/">
+                    <button type="button" class="btn btn-delete">삭제</button>
+                </a>
+                
+                {% if todo.is_complete %}
+                    <a" class="btn btn-completed">완료</a>
+                {% else %}
+                <a href="./{{ todo.id }}/complete/">
+                    <button type="button" class="btn btn-complete">완료</button>
+                </a>
+                {% endif %}    
+                {% endif %}
+            </div>
+        </div>
+    </div> 
+    {% endfor %}
+</div>
+
+<div class="d-flex justify-content-center">
+    <ul class="pagination justify-content-center"></ul>
+        <span>
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}">
+                    <button type="button" class="btn btn-page">Previous</button>
+                </a>
+
+            {% endif %}
+
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">
+                    <button type="button" class="btn btn-page">Next</button>
+                </a>
+            {% endif %}
+        </span>
+    </ul>
+</div>
+
+{% endblock %}

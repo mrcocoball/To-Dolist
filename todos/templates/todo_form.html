@@ -1,14 +1,54 @@
-<h1>ToDo create form</h1>
+{% extends 'base.html' %}
+
+{% block title %}To-Dolist{% endblock %}
 
 {% block content %}
 
-<form action="." method="POST" id="todoWriteForm">
-{% csrf_token %}
+<div class="todo_header">
+    <h2>ToDo 작성 / 수정</h2>
+    <p>제목과 내용을 입력하시고 작성 버튼을 눌러주세요!</p>
+</div>
 
-    {{ form }}
+<div class="input_form">
+    <form action="." method="POST" id="todoWriteForm">
+        {% csrf_token %}
+        <div class="input_item">
+            <label class="input_label">
+                <h6>ToDo 제목</h6>
+            </label>
+            <input type="text" class="form-control" id="title" name="title" autocomplete="false" placeholder="ToDo 제목, 최대 14자" value="{{ todo.title }}" required/>
+        </div>  
+        <div class="input_item">
+            <label class="input_label">
+                <h6>ToDo 상세</h6>
+            </label>
+            <textarea class="form-control" rows="10" id="description" name="description" autocomplete="false" placeholder="ToDo 내용, 최대 500자" required>{{ todo.description }}</textarea>
+        </div>
+        {% if form.errors %}
+        <div class="alert alert-danger">
+            {% for field in form %}
+            {% if field.name == 'title' %}
+                {% if field.errors %}
+                    제목 {{ field.errors }}
+                {% endif %}
+            {% elif field.name == 'description' %}
+                {% if field.errors %}
+                    내용 {{ field.errors }}
+                {% endif %}
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}   
+        <div class="input_button">
+            <button type="submit" class="w-100 btn btn-create" form="todoWriteForm">작성</button>
+        </div>
+        <div class="input_button">
+            <a href="..">
+                <button type="button" class="w-100 btn btn-cancel">취소</button>
+            </a>
+        </div>            
+    </form>
+</div>
 
-    <button type="submit" form="todoWriteForm">등록</button>
-
-</form>
 
 {% endblock %}

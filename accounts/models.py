@@ -11,3 +11,12 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.email
+    
+    def plus_todo_count(self):
+        self.todo_count += 1
+        self.save()
+
+    def plus_todo_complete_count(self):
+        self.todo_complete_count += 1
+        self.save()
+
