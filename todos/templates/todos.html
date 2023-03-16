@@ -4,24 +4,30 @@
 
 {% block content %}
 <div class="todo_header">
-    <h1>ToDo list</h1>
+    <h2>ToDo list</h2>
     <p>해야 할 일을 작성하고 일을 끝냈다면 완료 버튼을 눌러주세요!</p>
-    <a href="{% url 'todos:write' %}">
-        <button type="button" class="btn btn-create">ToDo 작성</button>
-    </a>
+    <div>
+        <a href="{% url 'todos:write' %}">
+            <button type="button" class="w-100 btn btn-create">ToDo 작성</button>     
+        </a>
+    </div>
 </div>
 
 <div class="todo_body">
+    <div>
+        <h5>ToDo 목록</h5>
+    </div>
+    
     {% for todo in todos %}
     {% if todo.is_complete%}
-    <div class="p-6 rounded" style="padding-block: 15px; padding-inline: 15px; margin-bottom: 10px; text-align: left; background-color: #8195d3;">
+    <div class="p-6 rounded completed_todo">
     {% else %}
-    <div class="p-6 rounded" style="padding-block: 15px; padding-inline: 15px; margin-bottom: 10px; text-align: left; background-color: #f0f4ff;">
+    <div class="p-6 rounded not_completed_todo">
     {% endif %}
         <div class="todo_box">
             <small>{{ todo.created_at | date:"y-m-d"}}</small>
             <a href='{{ todo.get_absolute_url }}'>
-                <h6>{{ todo.description }}</h6>
+                <h6>{{ todo.title }}</h6>
             </a>
             <div class="button_list">    
                 {% if todo.owner == user %}
@@ -34,7 +40,7 @@
                 </a>
                 
                 {% if todo.is_complete %}
-                    <button type="button" class="btn btn-complete">완료</button>
+                    <button type="button" class="btn btn-completed">완료</button>
                 {% else %}
                 <a href="./{{ todo.id }}/complete/">
                     <button type="button" class="btn btn-complete">완료</button>
@@ -47,23 +53,25 @@
     {% endfor %}
 </div>
 
-<div>
-    <span>
-        {% if page_obj.has_previous %}
-            <a href="?page={{ page_obj.previous_page_number }}">
-                <button type="button" class="btn btn-page">Previous</button>
-            </a>
+<div class="d-flex justify-content-center">
+    <ul class="pagination justify-content-center"></ul>
+        <span>
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}">
+                    <button type="button" class="btn btn-page">Previous</button>
+                </a>
 
-        {% endif %}
+            {% endif %}
 
-        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
 
-        {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">
-                <button type="button" class="btn btn-page">Next</button>
-            </a>
-        {% endif %}
-    </span>
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">
+                    <button type="button" class="btn btn-page">Next</button>
+                </a>
+            {% endif %}
+        </span>
+    </ul>
 </div>
 
 {% endblock %}
