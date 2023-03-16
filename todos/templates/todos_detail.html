@@ -1,20 +1,92 @@
-<h1>ToDo detail</h1>
+{% extends 'base.html' %}
 
-<p>
+{% block title %}To-Dolist{% endblock %}
 
-    {{ object.description }}
+{% block content %}
 
-    <p>작성일자 : {{ object.created_at }}</p>
-    <p>수정일자 : {{ object.modified_at }}</p>
+<div class="todo_detail">
+    <div class="todo_detail_item">
+        {% if object.owner == user %}
+        {% if object.is_complete%}
+        <a class="btn btn-completed">완료됨</a>
+        {% else %}
+        <a class="btn btn-complete" href="./complete?path={{ object.id }}">완료하기</a>
+        {% endif %}
+        {% else %}
+        {% if object.is_complete%}
+        <a class="btn btn-completed">완료됨</a>
+        {% else %}
+        <a class="btn btn-complete">완료되지 않음</a>
+        {% endif %}
+        {% endif %}
+    </div>
+    <div class="todo_detail_item">
+        <label class="detail_label">
+            <h5>제목 : {{ object.title }}</h5>
+        </label>
+        <div class="reverse_align">
+            <label class="date_label">
+                <b>작성일자</b>
+                {{ object.created_at | date:"y-m-d" }}
+            </label>
+            <label class="date_label">
+                <b>수정일자</b>
+                {{ object.modified_at | date:"y-m-d" }}            
+            </label>
+        </div>
+    </div>
+    <div class="todo_detail_item">
+        <textarea class="form-control" rows="10" id="description" name="description" readonly>{{ todo.description }}</textarea>
+    </div>
+    <div class="reverse_align">
+        {% if object.owner == user %}
+        <div class="input_button">
+            <a href="./modify/">
+                <button type="button" class="w-100 btn btn-update">수정</button>
+            </a>
+        </div>
+        <div class="input_button">
+            <a href="./delete/">
+                <button type="button" class="w-100 btn btn-delete">삭제</button>
+            </a>
+        </div>
+        {% endif %}
+    </div>
+    <div class="todo_detail_bottom">
+        <hr>
+        <div class="justify-content-center">
+            <div class="pagination_button_list">
+                <div class="pagination_button">
+                    {% if object.get_previous %}
+                    <a href="{{ object.get_previous.get_absolute_url }}" title="이전 ToDo">
+                        <button type="button" class="btn btn-page">Prev</button>
+                    </a>
+                    {{ object.get_previous }}
+                    {% else %}
+                    <a class="btn btn-page-disabled">Prev</a>
+                    첫번째 ToDo입니다
+                    {% endif %}
+                </div>
+                <div class="reverse_align">
+                    <a href="..">
+                        <button type="button" class="btn btn-page">목록으로 이동</button>
+                    </a>
+                </div>
+            </div>
+            <div class="pagination_button">
+                {% if object.get_next %}
+                <a href="{{ object.get_next.get_absolute_url }}" title="다음 ToDo">
+                    <button type="button" class="btn btn-page">Next</button>
+                </a>
+                {{ object.get_next }}
+                {% else %}
+                <a class="btn btn-page-disabled">Next</a>
+                마지막 ToDo입니다
+                {% endif %}
+            </div> 
+        </div>
+    </div>
+</div>
 
-    <p>완료 여부 : {{ object.is_complete }}</p>
 
-    {% if object.get_previous %}
-        <a href="{{ object.get_previous.get_absolute_url }}" title="이전 ToDo">&laquo;-- {{ object.get_previous }}</a>
-    {% endif %}
-
-    {% if object.get_next %}
-        <a href="{{ object.get_next.get_absolute_url }}" title="다음 ToDo">--&raquo; {{ object.get_next }}</a>
-    {% endif %}
-
-</p>
+{% endblock %}
