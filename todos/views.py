@@ -28,7 +28,7 @@ class TodoDV(DetailView):
 class TodoCreateView(LoginRequiredMixin, CreateView):
 
     model = Todo
-    fields = ['description',]
+    fields = ['title', 'description',]
     success_url = reverse_lazy('todos:main')
     template_name = 'todo_form.html'
 
@@ -41,7 +41,7 @@ class TodoCreateView(LoginRequiredMixin, CreateView):
 class TodoUpdateView(OwnerOnlyMixin, UpdateView):
 
     model = Todo
-    fields = ['description',]
+    fields = ['title', 'description',]
     template_name = 'todo_form.html'
     
     def form_valid(self, form):
