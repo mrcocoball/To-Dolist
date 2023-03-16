@@ -14,9 +14,7 @@
 </div>
 
 <div class="todo_body">
-    <div>
-        <h5>ToDo 목록</h5>
-    </div>
+    <hr>
     
     {% for todo in todos %}
     {% if todo.is_complete%}
@@ -40,7 +38,7 @@
                 </a>
                 
                 {% if todo.is_complete %}
-                    <button type="button" class="btn btn-completed">완료</button>
+                    <a" class="btn btn-completed">완료</a>
                 {% else %}
                 <a href="./{{ todo.id }}/complete/">
                     <button type="button" class="btn btn-complete">완료</button>

@@ -12,6 +12,17 @@ a {
     color: rgb(29, 29, 29);
 }
 
+.main_header {
+    background-color: rgb(1, 12, 48);
+}
+
+/* 역정렬 관련 */
+
+div.reverse_align {
+    text-align: right;
+}
+
+
 /* Todos 관련 */
 
 div.todo_header {
@@ -19,7 +30,7 @@ div.todo_header {
 }
 
 div.todo_body {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 div.todo_box {
@@ -35,6 +46,68 @@ div.todo_box > h6 {
 
 div.button_list {
     flex-direction: row-reverse;
+}
+
+div.completed_todo {
+    padding-block: 7px; 
+    padding-inline: 15px; 
+    margin-bottom: 10px; 
+    text-align: left; 
+    background: -webkit-linear-gradient(left, white, #263b79);
+    vertical-align: middle;
+}
+
+div.not_completed_todo {
+    padding-block: 7px; 
+    padding-inline: 15px; 
+    margin-bottom: 10px; 
+    text-align: left; 
+    background: -webkit-linear-gradient(left, white, #d5e0ff);
+    vertical-align: middle;
+}
+
+
+/* Todo Detail, Form 관련 */
+
+div.input_form {
+    min-width: 400px;
+    max-width: 900px;
+}
+
+div.input_item {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+div.input_button {
+    margin-top: 5px;
+}
+
+div.todo_error > p {
+    color: #b6316f;
+}
+
+div.button_list {
+    flex-direction: row-reverse;
+}
+
+div.todo_detail {
+    min-width: 400px;
+    max-width: 900px;
+}
+
+div.todo_detail_item {
+    justify-content: space-between !important;
+    display: flex !important;
+    margin-bottom: 10px;
+}
+
+.date_label {
+    font-size: 14px;
+}
+
+div.todo_detail_bottom {
+    margin-top: 40px;
 }
 
 
@@ -75,13 +148,25 @@ div.button_list {
 }
 
 .btn-complete {
-    background-color: rgb(11, 141, 192);
+    background-color: rgb(9, 94, 128);
     color:aliceblue;
     font-size: small;
 }
 
 .btn-complete:hover {
     background-color: rgb(77, 202, 252);
+    color:aliceblue;
+    font-size: small;
+}
+
+.btn-completed {
+    background-color: rgb(5, 37, 49);
+    color:aliceblue;
+    font-size: small;
+}
+
+.btn-completed:hover {
+    background-color: rgb(5, 37, 49);
     color:aliceblue;
     font-size: small;
 }
@@ -106,8 +191,35 @@ div.button_list {
     text-decoration: none;
 }
 
+.btn-cancel {
+    background-color: rgb(80, 0, 33);
+    color:aliceblue;
+}
+
+.btn-cancel:hover {
+    background-color: rgb(136, 31, 75);
+    color:aliceblue;
+}
+
+.btn-login {
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 33, 61);
+}
+
+.btn-login:hover {
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 33, 61);
+}
+
 
 /* 페이징 관련 */
+
+div.pagination_button_list {
+    justify-content: space-between !important;
+    display: flex !important;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
 
 .btn-page {
     background-color: rgb(31, 59, 121);
@@ -117,6 +229,18 @@ div.button_list {
 
 .btn-page:hover {
     background-color: rgb(156, 186, 250);
+    font-size: smaller;
+    color:aliceblue;
+}
+
+.btn-page-disabled {
+    background-color: rgb(66, 76, 97);
+    font-size: smaller;
+    color:aliceblue;
+}
+
+.btn-page-disabled:hover {
+    background-color: rgb(66, 76, 97);
     font-size: smaller;
     color:aliceblue;
 }
