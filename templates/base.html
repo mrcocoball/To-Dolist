@@ -24,7 +24,9 @@
   
       <div class="collapse navbar-collapse" id="navbarsExample07">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <a class="nav-link active" href="#">프로필</a>
+            {% if user.is_authenticated %}
+            <a class="nav-link active" href="/profiles">프로필</a>
+            {% endif %}
             <a class="nav-link active" href="/todos">ToDo 목록</a>
         </ul>
   
@@ -52,11 +54,22 @@
 
 <body>
 
-<div class="container-fluid" style="margin-top: 20px; min-width: 400px; max-width: 900px;">
+<div id="wrapper">
+  <div class="container-fluid" style="margin-top: 20px; min-width: 400px; max-width: 900px;">
     {% block content %}{% endblock %}
+  </div>
 </div>
 
-{% block footer %}{% endblock %}
+{% block footer %}
+
+<footer class="py-3 my-4 myfooter">
+  <hr>
+  <div style="margin-top: 40px;">
+    <p class="text-center text-muted" style="color:aliceblue;">&copy; 2023 Cocoball Enterprise, Inc</p>
+  </div>
+</footer>
+
+{% endblock %}
 
 <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
