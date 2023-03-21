@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block title %}To-Dolist{% endblock %}
+
+{% block content %}
+<div class="profile_header">
+    <h2>Profile</h2>
+    <p>계획을 얼마나 세우고 얼마나 진행했는지 알아봐요</p>
+</div>
+<hr>
+
+<div class="profile_detail">
+    <div class="profile_detail_item">
+        <h6>닉네임</h6>
+        <p>{{ profile.username }}</p>
+    </div>
+    <div class="profile_detail_item">
+        <h6>계획을 짠 횟수</h6>
+        <p>{{ profile.todo_count}}</p>
+    </div>
+    <div class="profile_detail_item">
+        <h6>계획을 실행한 횟수</h6>
+        <p>{{ profile.todo_complete_count }}</p>
+    </div>
+    <div class="profile_detail_item">
+        <h6>당신의 계획력 랭크</h6>
+        <p>SILVER</p>
+    </div>
+</div>
+<hr>
+<div style="margin-top: 10px;">
+    <button type="button" class="w-100 btn btn-create" id="common_share_button">프로필 공유하기</button>
+</div>
+
+<div class="profile_rank">
+    <h4>계획력 랭크 관련</h4>
+    <p>여러분의 계획을 실행할 때마다 등급이 올라갑니다</p>
+</div>
+<hr>
+
+<div class="profile_table_container">
+    <table class="table" id="profile_table">
+        <thead>
+            <th>등급명</th>
+            <th>설명</th>
+            <th>계획수</th>
+            <th>완료수</th>
+        </thead>
+        <tbody>
+            <td>SILVER</td>
+            <td>기본 등급입니다</td>
+            <td>없음</td>
+            <td>없음</td>
+        </tbody>
+        <tbody>
+            <td>GOLD</td>
+            <td>이 정도만 해도 대단하십니다</td>
+            <td>30</td>
+            <td>15</td>
+        </tbody>
+        <tbody>
+            <td>PLATINUM</td>
+            <td>어디가서 계획적인 사람이라고 자랑하셔도 됩니다</td>
+            <td>100</td>
+            <td>50</td>
+        </tbody>
+        <tbody>
+            <td>DIAMOND</td>
+            <td>계획적이면서 근성도 있는 당신을 진심으로 응원합니다</td>
+            <td>200</td>
+            <td>150</td>
+        </tbody>
+        <tbody>
+            <td>MASTER</td>
+            <td>당신을 계획 짜기의 마스터로 임명합니다</td>
+            <td>400</td>
+            <td>300</td>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

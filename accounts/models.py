@@ -5,8 +5,8 @@ class User(AbstractUser):
     
     first_name = None
     last_name = None
-    todo_count = models.BigIntegerField('TODO_COUNT', null=True)
-    todo_complete_count = models.BigIntegerField('TODO_COMPLETE_COUNT', null=True)
+    todo_count = models.BigIntegerField('TODO_COUNT', null=True, default=0)
+    todo_complete_count = models.BigIntegerField('TODO_COMPLETE_COUNT', null=True, default=0)
 
     def __str__(self):
         return self.email

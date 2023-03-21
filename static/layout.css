@@ -3,6 +3,10 @@
 
 /* 전역 설정 */
 
+html, body {
+    height: 100%;
+}
+
 * {
 	font-family: 'Noto Sans KR', sans-serif;
 }
@@ -22,6 +26,35 @@ div.reverse_align {
     text-align: right;
 }
 
+
+/* Profiles 관련 */
+
+div.profile_header {
+    margin-bottom: 30px;
+}
+
+div.profile_rank {
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+div.profile_detail {
+    padding-left: 10px;
+    padding-right: 10px;
+    min-width: 400px;
+    max-width: 900px;
+    justify-content: space-between !important;
+    display: flex !important;
+}
+
+div.profile_table_container {
+    margin-top: 30px;
+}
+
+#profile_table > th, td {
+    vertical-align: middle;
+    font-size: small;
+}
 
 /* Todos 관련 */
 
@@ -224,6 +257,40 @@ div.todo_detail_bottom {
     color:rgb(0, 33, 61);
 }
 
+.btn-join {
+    background-color: rgb(28, 63, 132);
+    color:aliceblue;
+    margin-bottom: 10px;
+}
+
+.btn-join:hover {
+    background-color: rgb(66, 102, 172);
+    color:aliceblue;
+    margin-bottom: 10px;
+}
+
+.btn-kakao {
+    background-color: 	#FEE500;
+    color:rgb(0, 33, 61);
+}
+
+.btn-kakao:hover {
+    background-color: 	#FEE500;
+    color:rgb(0, 33, 61);
+}
+
+/* footer 관련 */
+
+#wrapper {
+    min-height: 88%;
+    position: relative;
+    padding-bottom: 120px;
+}
+
+footer.myfooter {
+    position: relative;
+    transform: translateY(-100%);
+}
 
 /* 페이징 관련 */
 
