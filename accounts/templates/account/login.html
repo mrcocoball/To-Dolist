@@ -32,7 +32,7 @@
         <div class="form-floating">
             {{ form.login | add_class:"form-control"|attr:"placeholder: 이메일"|attr:"autocomplete='false'"|add_error_class:"error" }}
             <label for="floatingPassword">이메일</label>
-            {% for error in form.email.errors %}
+            {% for error in form.login.errors %}
                 <div class="error-message"><p>{{ error }}</p></div>
             {% endfor %}
           </div>
@@ -40,7 +40,7 @@
         <div class="form-floating">
             {{ form.password | add_class:"form-control"|attr:"placeholder: 비밀번호, 8자 이상"|attr:"autocomplete='false'"|add_error_class:"error" }}
             <label for="floatingPassword">비밀번호</label>
-            {% for error in form.password1.errors %}
+            {% for error in form.password.errors %}
             <div class="error-message"><p>{{ error }}</p></div>
             {% endfor %}
         </div>
@@ -48,7 +48,7 @@
 
       <div class="my-4">
         <div class="reverse_align">
-          <button form="login_form" type="submit" class="w-100 btn btn-primary submitBtn">로그인</button>
+          <button form="login_form" type="submit" class="w-100 btn btn-join">로그인</button>
           <a href="/todos/">
             <button class="w-100 btn btn-cancel">취소</button>
         </a>
@@ -58,12 +58,12 @@
       <div>
         <p>계정이 없으시다면?</p>
         <a href="/accounts/signup">
-            <button class="w-100 btn btn-create">회원가입하기</button>
+            <button class="w-100 btn btn-join">회원가입하기</button>
         </a>
       </div>
       <div>
         <a href="{% provider_login_url 'kakao' method='oauth2' %}">
-            <button class="w-100 btn btn-create">카카오 소셜 로그인</button>
+            <button class="w-100 btn btn-kakao">카카오 소셜 로그인</button>
         </a>
       <div>
     </main>
