@@ -3,7 +3,6 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     
-    nickname = models.CharField('NICKNAME', max_length=20, unique=True, null=True)
     first_name = None
     last_name = None
     todo_count = models.BigIntegerField('TODO_COUNT', null=True)
