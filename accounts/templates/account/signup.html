@@ -33,6 +33,14 @@
                 <div class="error-message"><p>{{ error }}</p></div>
             {% endfor %}
           </div>
+
+        <div class="form-floating">
+            {{ form.username | add_class:"form-control"|attr:"placeholder: 닉네임"|add_error_class:"error" }}
+            <label for="floatingInput">닉네임, 15자 이하</label>
+            {% for error in form.username.errors %}
+            <div class="error-message"><p>{{ error }}</p></div>
+            {% endfor %}
+        </div>
     
         <div class="form-floating">
             {{ form.password1 | add_class:"form-control"|attr:"placeholder: 비밀번호, 8자 이상"|attr:"autocomplete='false'"|add_error_class:"error" }}
@@ -50,25 +58,15 @@
             {% endfor %}
         </div>
   
-        <div class="form-floating">
-            {{ form.username | add_class:"form-control"|attr:"placeholder: 닉네임"|add_error_class:"error" }}
-            <label for="floatingInput">닉네임</label>
-            {% for error in form.username.errors %}
-            <div class="error-message"><p>{{ error }}</p></div>
-            {% endfor %}
-        </div>
-    
-        <div class="my-4" style="margin-bottom: 10px;">
-          <div class="reverse_align">
-            <button type="submit" class="w-100 btn btn-primary submitBtn">등록</button>
-          </div>
-        </div>
       </form>
-      <div>
-        <a href="{% url 'account_login' %}">
-            <button class="w-100 btn btn-cancel">취소</button>
-        </a>
-      </div>
+    
+        <div class="my-4">
+          <div class="reverse_align">
+            <button form="signup_form" type="submit" class="w-100 btn btn-primary submitBtn">등록</button>
+            <a href="{% url 'account_login' %}">
+              <button class="w-100 btn btn-cancel">취소</button>
+          </a>
+        </div>
     </main>
 
 </body>
