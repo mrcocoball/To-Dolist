@@ -38,9 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'todos.apps.TodosConfig',
     'profiles.apps.ProfilesConfig',
     'accounts',
+    'widget_tweaks',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -95,11 +97,11 @@ AUTH_USER_MODEL = 'accounts.User' # AbstarctUser
 # Email 로그인 및 기타 설정 (allauth)
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_USER_MODEL_USERNAME_FIELD = None
-SOCIALACCOUNT_AUTO_SIGNUP = False
+ACCOUNT_USERNAME_REQUIRED = True
+SOCIALACCOUNT_AUTO_SIGNUP = True
 ACCOUNT_EMAIL_VERIFICATION = None
-
+ACCOUNT_SESSION_REMEMBER = True
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 30
 
 # Authentication Backends 설정
 AUTHENTICATION_BACKENDS = [
@@ -114,9 +116,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 # Custom Login Page
-ACCOUNT_SIGNUP_REDIRECT_URL = 'index'
-LOGIN_REDIRECT_URL = 'index'
-LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_SIGNUP_REDIRECT_URL = '/todos/'
+ACCOUNT_LOGOUT_ON_GET = True
+LOGIN_REDIRECT_URL = '/todos/'
+LOGOUT_REDIRECT_URL = '/todos/'
+ACCOUNT_PASSWORD_INPUT_RENDER_VALUE = True
 
 
 # Password validation

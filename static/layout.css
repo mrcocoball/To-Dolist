@@ -66,6 +66,19 @@ div.not_completed_todo {
     vertical-align: middle;
 }
 
+div.user_is_authenticated {
+    justify-content: space-between !important;
+    display: flex !important;
+    vertical-align: middle;
+}
+
+div.user_is_authenticated > p {
+    color: aliceblue;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+}
+
 
 /* Todo Detail, Form 관련 */
 
