@@ -182,6 +182,16 @@ div.todo_detail_bottom {
     font-size: small;
 }
 
+.btn-update-large {
+    background-color: rgb(36, 23, 82);
+    color:aliceblue;
+}
+
+.btn-update-large:hover {
+    background-color: rgb(83, 64, 153);
+    color:aliceblue;
+}
+
 .btn-delete {
     background-color: rgb(90, 8, 72);
     color:aliceblue;
@@ -193,6 +203,17 @@ div.todo_detail_bottom {
     color:aliceblue;
     font-size: small;
 }
+
+.btn-delete-large {
+    background-color: rgb(90, 8, 72);
+    color:aliceblue;
+}
+
+.btn-delete-large:hover {
+    background-color: rgb(175, 16, 141);
+    color:aliceblue;
+}
+
 
 .btn-complete {
     background-color: rgb(9, 94, 128);
@@ -282,6 +303,7 @@ div.todo_detail_bottom {
 
 /* footer 관련 */
 
+/*
 #wrapper {
     min-height: 88%;
     position: relative;
@@ -292,6 +314,7 @@ footer.myfooter {
     position: relative;
     transform: translateY(-100%);
 }
+*/
 
 /* 페이징 관련 */
 
