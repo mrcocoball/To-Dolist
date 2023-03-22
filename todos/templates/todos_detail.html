@@ -5,6 +5,9 @@
 {% block content %}
 
 <div class="todo_detail">
+    <div class="share_id" hidden>
+        <span class="share_idx">todos/{{ object.id }}</span>
+    </div>
     <div class="todo_detail_item">
         {% if object.owner == user %}
         {% if object.is_complete%}
@@ -45,16 +48,19 @@
         {% if object.owner == user %}
         <div class="input_button">
             <a href="./modify/">
-                <button type="button" class="w-100 btn btn-update">수정</button>
+                <button type="button" class="w-100 btn btn-update-large">수정</button>
             </a>
         </div>
         <div class="input_button">
             <form id="todo_delete_detail" method="post" action="./delete/">
                 {% csrf_token %}
-                <button type="submit" form="todo_delete_detail" class="w-100 btn btn-delete">삭제</button>
+                <button type="submit" form="todo_delete_detail" class="w-100 btn btn-delete-large">삭제</button>
             </form>
         </div>
         {% endif %}
+        <div class="input_button">
+            <button type="button" class="w-100 btn btn-create" id="modalCallBtn">공유하기</button>
+        </div>
     </div>
     <div class="todo_detail_bottom">
         <hr>
@@ -92,5 +98,11 @@
     </div>
 </div>
 
+<!-- 모달 템플릿 -->
+{% include 'share.html' %}
+
+<!-- 모달 작동 로직 (Javascript) -->
+{% load static %}
+<script src="{% static 'js/modal.js' %}"></script>
 
 {% endblock %}

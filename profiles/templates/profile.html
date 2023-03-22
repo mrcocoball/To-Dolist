@@ -10,6 +10,9 @@
 <hr>
 
 <div class="profile_detail">
+    <div class="share_id" hidden>
+        <span class="share_idx">profiles/{{ profile.id }}</span>
+    </div>
     <div class="profile_detail_item">
         <h6>닉네임</h6>
         <p>{{ profile.username }}</p>
@@ -29,7 +32,7 @@
 </div>
 <hr>
 <div style="margin-top: 10px;">
-    <button type="button" class="w-100 btn btn-create" id="common_share_button">프로필 공유하기</button>
+    <button type="button" class="w-100 btn btn-create" id="modalCallBtn">프로필 공유하기</button>
 </div>
 
 <div class="profile_rank">
@@ -84,5 +87,12 @@
         </tbody>
     </table>
 </div>
+
+<!-- 모달 템플릿 -->
+{% include 'share.html' %}
+
+<!-- 모달 작동 로직 (Javascript) -->
+{% load static %}
+<script src="{% static 'js/modal.js' %}"></script>
 
 {% endblock %}
