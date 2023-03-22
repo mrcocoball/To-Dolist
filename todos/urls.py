@@ -21,6 +21,6 @@ urlpatterns = [
     path('<int:pk>/delete/', views.delete, name="delete"),
 
     # Example : /todos/{id}/complete
-    path('<int:pk>/complete/', views.complete, name="complete"),
+    path('<int:pk>/complete', views.complete, name="complete"),
 
 ]

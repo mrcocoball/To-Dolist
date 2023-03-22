@@ -26,6 +26,20 @@ div.reverse_align {
     text-align: right;
 }
 
+/* 상단 내비게이션 관련 */
+
+div.user_is_authenticated {
+    justify-content: space-between !important;
+    display: flex !important;
+    vertical-align: middle;
+    align-items: center !important;
+    flex-wrap: nowrap;
+}
+
+#auth-username {
+    color:aliceblue;
+    margin-right: 10px;
+}
 
 /* Profiles 관련 */
 
@@ -78,7 +92,9 @@ div.todo_box > h6 {
 }
 
 div.button_list {
-    flex-direction: row-reverse;
+    justify-content: space-between !important;
+    display: flex !important;
+    vertical-align: middle;
 }
 
 div.completed_todo {
@@ -98,20 +114,6 @@ div.not_completed_todo {
     background: -webkit-linear-gradient(left, white, #d5e0ff);
     vertical-align: middle;
 }
-
-div.user_is_authenticated {
-    justify-content: space-between !important;
-    display: flex !important;
-    vertical-align: middle;
-}
-
-div.user_is_authenticated > p {
-    color: aliceblue;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-right: 10px;
-}
-
 
 /* Todo Detail, Form 관련 */
 
@@ -155,7 +157,6 @@ div.todo_detail_item {
 div.todo_detail_bottom {
     margin-top: 40px;
 }
-
 
 /* 버튼 관련 */
 
@@ -322,5 +323,86 @@ div.pagination_button_list {
 .btn-page-disabled:hover {
     background-color: rgb(66, 76, 97);
     font-size: smaller;
+    color:aliceblue;
+}
+
+/* 랭크 관련 */
+
+#rank-BRONZE {
+    background: -webkit-linear-gradient(left, rgb(122, 49, 0), #ffa238);
+    vertical-align: middle;
+    color:aliceblue;
+    margin-right: 10px;
+}
+
+#profile_rank-BRONZE {
+    background: -webkit-linear-gradient(left, rgb(122, 49, 0), #ffa238);
+    vertical-align: middle;
+    color:aliceblue;
+}
+
+#rank-SILVER {
+    background: -webkit-linear-gradient(left, rgb(124, 117, 117), #c0c0c0);
+    vertical-align: middle;
+    color:aliceblue;
+    margin-right: 10px;
+}
+
+#profile_rank-SILVER {
+    background: -webkit-linear-gradient(left, rgb(124, 117, 117), #c0c0c0);
+    vertical-align: middle;
+    color:aliceblue;
+}
+
+#rank-GOLD {
+    background: -webkit-linear-gradient(left, rgb(172, 149, 23), #a3a243, rgb(230, 208, 88));
+    vertical-align: middle;
+    color:aliceblue;
+    margin-right: 10px;
+}
+
+#profile_rank-GOLD {
+    background: -webkit-linear-gradient(left, rgb(172, 149, 23), #a3a243, rgb(230, 208, 88));
+    vertical-align: middle;
+    color:aliceblue;
+}
+
+
+#rank-PLATINUM {
+    background: -webkit-linear-gradient(left, rgb(179, 179, 179), #cfce9b, rgb(255, 225, 56));
+    vertical-align: middle;
+    color:aliceblue;
+    margin-right: 10px;
+}
+
+#profile_rank-PLATINUM {
+    background: -webkit-linear-gradient(left, rgb(179, 179, 179), #cfce9b, rgb(255, 225, 56));
+    vertical-align: middle;
+    color:aliceblue;
+}
+
+#rank-DIAMOND {
+    background: -webkit-linear-gradient(left, rgb(127, 230, 224), #46b5c4, rgb(94, 177, 255));
+    vertical-align: middle;
+    color:aliceblue;
+    margin-right: 10px;
+}
+
+#profile_rank-DIAMOND {
+    background: -webkit-linear-gradient(left, rgb(127, 230, 224), #46b5c4, rgb(94, 177, 255));
+    vertical-align: middle;
+    color:aliceblue;
+}
+
+#rank-MASTER {
+    background: -webkit-linear-gradient(left, rgb(107, 18, 116), #5e28b6 ,#2162c4);
+    vertical-align: middle;
+    color:aliceblue;
+    margin-right: 10px;
+}
+
+#profile_rank-MASTER {
+    background: -webkit-linear-gradient(left, rgb(107, 18, 116), #5e28b6 ,#2162c4);
+    vertical-align: middle;
     color:aliceblue;
 }

@@ -34,6 +34,7 @@ class TodoCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.owner = self.request.user
+        form.instance.owner.plus_todo_count()
         return super().form_valid(form)
 
 
@@ -51,24 +52,31 @@ class TodoUpdateView(OwnerOnlyMixin, UpdateView):
 # Delete
 def delete(request, pk):
 
-    db_article = Todo.objects.get(id = pk)
+    if request.method == "POST":
 
-    if request.user == db_article.owner:
-        db_article.delete()
+        db_article = Todo.objects.get(id = pk)
 
-    return HttpResponseRedirect(reverse('todos:main'))
+        if request.user == db_article.owner:
+            db_article.delete()
+
+        return HttpResponseRedirect(reverse('todos:main'))
 
 # Complete
 def complete(request, pk):
 
-    db_article = Todo.objects.get(id = pk)
+    if request.method == "POST":
 
-    if request.user == db_article.owner:
-        db_article.change_complete()
+        db_article = Todo.objects.get(id = pk)
 
-    request_path = request.GET.get('path', None)
+        if request.user == db_article.owner:
+            db_article.change_complete()
+            user = db_article.owner
 
-    if request_path != None: # 세부 페이지에서 호출 시
-        return HttpResponseRedirect(reverse('todos:detail', args=[request_path]))
-    else: # 그 외
-        return HttpResponseRedirect(reverse('todos:main'))
+            user.plus_todo_complete_count()
+
+        request_path = request.GET.get('path', None)
+
+        if request_path != None: # 세부 페이지에서 호출 시
+            return HttpResponseRedirect(reverse('todos:detail', args=[request_path]))
+        else: # 그 외
+            return HttpResponseRedirect(reverse('todos:main'))

@@ -33,18 +33,26 @@
         <div class="text-end">
           {% if user.is_authenticated %}
           <div class="user_is_authenticated">
-            <p class="align-self-center">{{ user.username }}</p>
+            <div>
+              <p class="align-self-center" id="rank-{{ user.rank }}" style="font-size: small;">{{ user.rank }}</p>
+            </div>
+            <div>
+              <p id="auth-username">{{ user.username }}</p>
+            </div>
             <a href="/accounts/logout/">
-              <button type="button" class="btn btn-outline-light me-2">로그아웃</button>
+                <button type="button" class="btn btn-outline-light me-2">로그아웃</button>
             </a>
           </div>
           {% else %}
-          <a href="/accounts/login">
-            <button type="button" class="btn btn-login">로그인</button>
-          </a>
-          <a href="/accounts/signup">
-            <button type="button" class="btn btn-login">회원가입</button>
-          </a>
+          <div class="user_is_not_authenticated">
+              <a href="/accounts/login">
+                <button type="button" class="btn btn-login">로그인</button>
+              </a>
+              <a href="/accounts/signup">
+                <button type="button" class="btn btn-login">회원가입</button>
+              </a>
+            </div>
+          </div>
           {% endif %}
         </div>
       </div>

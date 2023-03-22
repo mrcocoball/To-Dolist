@@ -29,21 +29,23 @@
             </a>
             <div class="button_list">    
                 {% if todo.owner == user %}
+
+                {% if todo.is_complete %}
+                <a class="btn btn-completed">완료</a>
+                {% else %}
+                <form id="todo_complete" method="post" action="./{{ todo.id }}/complete">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-complete" form="todo_complete">완료</button>
+                </form>                    
+                {% endif %}  
                 
+                <form id="todo_delete" method="post" action="./{{ todo.id }}/delete/">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-delete" form="todo_delete">삭제</button>
+                </form>  
                 <a href="./{{ todo.id }}/modify/">
                     <button type="button" class="btn btn-update">수정</button>
                 </a>
-                <a href="./{{ todo.id }}/delete/">
-                    <button type="button" class="btn btn-delete">삭제</button>
-                </a>
-                
-                {% if todo.is_complete %}
-                    <a" class="btn btn-completed">완료</a>
-                {% else %}
-                <a href="./{{ todo.id }}/complete/">
-                    <button type="button" class="btn btn-complete">완료</button>
-                </a>
-                {% endif %}    
                 {% endif %}
             </div>
         </div>

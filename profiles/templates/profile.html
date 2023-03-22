@@ -5,7 +5,7 @@
 {% block content %}
 <div class="profile_header">
     <h2>Profile</h2>
-    <p>계획을 얼마나 세우고 얼마나 진행했는지 알아봐요</p>
+    <p>당신의 계획력을 알아보고 주변에 알려봅시다</p>
 </div>
 <hr>
 
@@ -15,16 +15,16 @@
         <p>{{ profile.username }}</p>
     </div>
     <div class="profile_detail_item">
-        <h6>계획을 짠 횟수</h6>
+        <h6>계획수</h6>
         <p>{{ profile.todo_count}}</p>
     </div>
     <div class="profile_detail_item">
-        <h6>계획을 실행한 횟수</h6>
+        <h6>계획 완료수</h6>
         <p>{{ profile.todo_complete_count }}</p>
     </div>
     <div class="profile_detail_item">
-        <h6>당신의 계획력 랭크</h6>
-        <p>SILVER</p>
+        <h6>계획력 랭크</h6>
+        <a id="profile_rank-{{ profile.rank }}">{{ profile.rank }}</a>
     </div>
 </div>
 <hr>
@@ -47,31 +47,37 @@
             <th>완료수</th>
         </thead>
         <tbody>
-            <td>SILVER</td>
+            <td><a id="profile_rank-BRONZE">BRONZE</a></td>
             <td>기본 등급입니다</td>
             <td>없음</td>
             <td>없음</td>
         </tbody>
         <tbody>
-            <td>GOLD</td>
+            <td><a id="profile_rank-SILVER">SILVER</a></td>
+            <td>가볍게 시작해봅시다</td>
+            <td>10</td>
+            <td>5</td>
+        </tbody>
+        <tbody>
+            <td><a id="profile_rank-GOLD">GOLD</a></td>
             <td>이 정도만 해도 대단하십니다</td>
             <td>30</td>
             <td>15</td>
         </tbody>
         <tbody>
-            <td>PLATINUM</td>
+            <td><a id="profile_rank-PLATINUM">PLATINUM</a></td>
             <td>어디가서 계획적인 사람이라고 자랑하셔도 됩니다</td>
             <td>100</td>
             <td>50</td>
         </tbody>
         <tbody>
-            <td>DIAMOND</td>
+            <td><a id="profile_rank-DIAMOND">DIAMOND</a></td>
             <td>계획적이면서 근성도 있는 당신을 진심으로 응원합니다</td>
             <td>200</td>
             <td>150</td>
         </tbody>
         <tbody>
-            <td>MASTER</td>
+            <td><a id="profile_rank-MASTER">MASTER</a></td>
             <td>당신을 계획 짜기의 마스터로 임명합니다</td>
             <td>400</td>
             <td>300</td>
