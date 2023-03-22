@@ -1,0 +1,21 @@
+  <!-- share modal -->
+
+  <div class="modal shareModal" id="shareModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">공유하기</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <span class="input-group-text">링크</span>
+            <input type="text" class="form-control" id="copyUrl" name="url" value="" readonly>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="w-100 btn btn-create" onclick="copy_to_clipboard()">복사하기</button>
+          <button type="button" class="w-100 btn btn-kakao">카카오톡 공유</button>
+        </div>
+      </div>
+    </div>
+  </div>
