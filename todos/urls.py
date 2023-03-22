@@ -18,9 +18,9 @@ urlpatterns = [
     path('<int:pk>/modify/', views.TodoUpdateView.as_view(), name="modify"),
 
     # Example : /todos/{id}/delete/
-    path('<int:pk>/delete/', views.delete, name="delete"),
+    path('<int:id>/delete/', views.delete, name="delete"),
 
     # Example : /todos/{id}/complete
-    path('<int:pk>/complete', views.complete, name="complete"),
+    path('<int:id>/complete', views.complete, name="complete"),
 
 ]

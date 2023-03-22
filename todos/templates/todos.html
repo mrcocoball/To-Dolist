@@ -33,17 +33,17 @@
                 {% if todo.is_complete %}
                 <a class="btn btn-completed">완료</a>
                 {% else %}
-                <form id="todo_complete" method="post" action="./{{ todo.id }}/complete">
+                <form method="post" action="{% url 'todos:complete' todo.id %}">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-complete" form="todo_complete">완료</button>
+                    <button type="submit" class="btn btn-complete">완료</button>
                 </form>                    
                 {% endif %}  
                 
-                <form id="todo_delete" method="post" action="./{{ todo.id }}/delete/">
+                <form method="post" action="{% url 'todos:delete' todo.id %}">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-delete" form="todo_delete">삭제</button>
+                    <button type="submit" class="btn btn-delete">삭제</button>
                 </form>  
-                <a href="./{{ todo.id }}/modify/">
+                <a href="{% url 'todos:modify' todo.id %}">
                     <button type="button" class="btn btn-update">수정</button>
                 </a>
                 {% endif %}

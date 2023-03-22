@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.decorators.http import require_POST
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -50,33 +51,31 @@ class TodoUpdateView(OwnerOnlyMixin, UpdateView):
         return super().form_valid(form)
 
 # Delete
-def delete(request, pk):
+@require_POST
+def delete(request, id):
 
-    if request.method == "POST":
+    db_article = get_object_or_404(Todo, id = id)
 
-        db_article = Todo.objects.get(id = pk)
+    if request.user == db_article.owner:
+        db_article.delete()
 
-        if request.user == db_article.owner:
-            db_article.delete()
-
-        return HttpResponseRedirect(reverse('todos:main'))
+    return HttpResponseRedirect(reverse('todos:main'))
 
 # Complete
-def complete(request, pk):
+@require_POST
+def complete(request, id):
 
-    if request.method == "POST":
+    db_article = get_object_or_404(Todo, id = id)
 
-        db_article = Todo.objects.get(id = pk)
+    if request.user == db_article.owner:
+        db_article.change_complete()
+        user = db_article.owner
 
-        if request.user == db_article.owner:
-            db_article.change_complete()
-            user = db_article.owner
+        user.plus_todo_complete_count()
 
-            user.plus_todo_complete_count()
+    request_path = request.GET.get('path', None)
 
-        request_path = request.GET.get('path', None)
-
-        if request_path != None: # 세부 페이지에서 호출 시
-            return HttpResponseRedirect(reverse('todos:detail', args=[request_path]))
-        else: # 그 외
-            return HttpResponseRedirect(reverse('todos:main'))
+    if request_path != None: # 세부 페이지에서 호출 시
+        return HttpResponseRedirect(reverse('todos:detail', args=[request_path]))
+    else: # 그 외
+        return HttpResponseRedirect(reverse('todos:main'))
