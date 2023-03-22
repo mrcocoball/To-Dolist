@@ -10,7 +10,10 @@
         {% if object.is_complete%}
         <a class="btn btn-completed">완료됨</a>
         {% else %}
-        <a class="btn btn-complete" href="./complete?path={{ object.id }}">완료하기</a>
+        <form id="todo_complete_detail" method="post" action="./complete?path={{ object.id }}">
+            {% csrf_token %}
+            <button type="submit" form="todo_complete_detail" class="btn btn-complete">완료하기</a>
+        </form>
         {% endif %}
         {% else %}
         {% if object.is_complete%}
@@ -46,9 +49,10 @@
             </a>
         </div>
         <div class="input_button">
-            <a href="./delete/">
-                <button type="button" class="w-100 btn btn-delete">삭제</button>
-            </a>
+            <form id="todo_delete_detail" method="post" action="./delete/">
+                {% csrf_token %}
+                <button type="submit" form="todo_delete_detail" class="w-100 btn btn-delete">삭제</button>
+            </form>
         </div>
         {% endif %}
     </div>
