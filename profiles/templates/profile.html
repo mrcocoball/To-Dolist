@@ -11,6 +11,7 @@
 
 <div class="profile_detail">
     <div class="share_id" hidden>
+        <span class="share_location">profiles</span>
         <span class="share_idx">profiles/{{ profile.id }}</span>
     </div>
     <div class="profile_detail_item">
@@ -27,7 +28,7 @@
     </div>
     <div class="profile_detail_item">
         <h6>계획력 랭크</h6>
-        <a id="profile_rank-{{ profile.rank }}">{{ profile.rank }}</a>
+        <a class="user_rank" id="profile_rank-{{ profile.rank }}">{{ profile.rank }}</a>
     </div>
 </div>
 <hr>
