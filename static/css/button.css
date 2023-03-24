@@ -1,0 +1,163 @@
+/* 버튼 관련 */
+
+div.button_list {
+    justify-content: space-between !important;
+    display: flex !important;
+    vertical-align: middle;
+}
+
+div.button_list_2 {
+    display: flex !important;
+    vertical-align: middle;
+}
+
+.btn-search {
+    background-color: rgb(31, 111, 121);
+    color:aliceblue;
+}
+
+.btn-search:hover {
+    background-color: rgb(47, 166, 182);
+    color:aliceblue;
+}
+
+.btn-create {
+    background-color: rgb(31, 59, 121);
+    color:aliceblue;
+}
+
+.btn-create:hover {
+    background-color: rgb(156, 186, 250);
+    color:aliceblue;
+}
+
+.btn-update {
+    background-color: rgb(36, 23, 82);
+    color:aliceblue;
+    font-size: small;
+}
+
+.btn-update:hover {
+    background-color: rgb(83, 64, 153);
+    color:aliceblue;
+    font-size: small;
+}
+
+.btn-update-large {
+    background-color: rgb(36, 23, 82);
+    color:aliceblue;
+}
+
+.btn-update-large:hover {
+    background-color: rgb(83, 64, 153);
+    color:aliceblue;
+}
+
+.btn-delete {
+    background-color: rgb(90, 8, 72);
+    color:aliceblue;
+    font-size: small;
+}
+
+.btn-delete:hover {
+    background-color: rgb(175, 16, 141);
+    color:aliceblue;
+    font-size: small;
+}
+
+.btn-delete-large {
+    background-color: rgb(90, 8, 72);
+    color:aliceblue;
+}
+
+.btn-delete-large:hover {
+    background-color: rgb(175, 16, 141);
+    color:aliceblue;
+}
+
+
+.btn-complete {
+    background-color: rgb(9, 94, 128);
+    color:aliceblue;
+    font-size: small;
+}
+
+.btn-complete:hover {
+    background-color: rgb(77, 202, 252);
+    color:aliceblue;
+    font-size: small;
+}
+
+.btn-completed {
+    background-color: rgb(5, 37, 49);
+    color:aliceblue;
+    font-size: small;
+}
+
+.btn-completed:hover {
+    background-color: rgb(5, 37, 49);
+    color:aliceblue;
+    font-size: small;
+}
+
+.btn-create > a:link {
+    color : white;
+    text-decoration: none;
+}
+
+.btn-create > a:visited {
+    color : white;
+    text-decoration: none;
+}
+
+.btn-create > a:hover {
+    color : white;
+    text-decoration: none;
+}
+
+.btn-create > a:active {
+    color : white;
+    text-decoration: none;
+}
+
+.btn-cancel {
+    background-color: rgb(80, 0, 33);
+    color:aliceblue;
+}
+
+.btn-cancel:hover {
+    background-color: rgb(136, 31, 75);
+    color:aliceblue;
+}
+
+.btn-login {
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 33, 61);
+}
+
+.btn-login:hover {
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 33, 61);
+}
+
+.btn-join {
+    background-color: rgb(28, 63, 132);
+    color:aliceblue;
+    margin-bottom: 10px;
+}
+
+.btn-join:hover {
+    background-color: rgb(66, 102, 172);
+    color:aliceblue;
+    margin-bottom: 10px;
+}
+
+.btn-kakao {
+    background-color: 	#FEE500;
+    color:rgb(0, 33, 61);
+}
+
+.btn-kakao:hover {
+    background-color: 	#FEE500;
+    color:rgb(0, 33, 61);
+}

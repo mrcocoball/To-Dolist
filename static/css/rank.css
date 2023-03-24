@@ -1,0 +1,80 @@
+/* 랭크 관련 */
+
+#rank-BRONZE {
+    background: -webkit-linear-gradient(left, rgb(122, 49, 0), #ffa238);
+    vertical-align: middle;
+    color:aliceblue;
+    margin-right: 10px;
+}
+
+#profile_rank-BRONZE {
+    background: -webkit-linear-gradient(left, rgb(122, 49, 0), #ffa238);
+    vertical-align: middle;
+    color:aliceblue;
+}
+
+#rank-SILVER {
+    background: -webkit-linear-gradient(left, rgb(124, 117, 117), #c0c0c0);
+    vertical-align: middle;
+    color:aliceblue;
+    margin-right: 10px;
+}
+
+#profile_rank-SILVER {
+    background: -webkit-linear-gradient(left, rgb(124, 117, 117), #c0c0c0);
+    vertical-align: middle;
+    color:aliceblue;
+}
+
+#rank-GOLD {
+    background: -webkit-linear-gradient(left, rgb(172, 149, 23), #a3a243, rgb(230, 208, 88));
+    vertical-align: middle;
+    color:aliceblue;
+    margin-right: 10px;
+}
+
+#profile_rank-GOLD {
+    background: -webkit-linear-gradient(left, rgb(172, 149, 23), #a3a243, rgb(230, 208, 88));
+    vertical-align: middle;
+    color:aliceblue;
+}
+
+
+#rank-PLATINUM {
+    background: -webkit-linear-gradient(left, rgb(179, 179, 179), #cfce9b, rgb(255, 225, 56));
+    vertical-align: middle;
+    color:aliceblue;
+    margin-right: 10px;
+}
+
+#profile_rank-PLATINUM {
+    background: -webkit-linear-gradient(left, rgb(179, 179, 179), #cfce9b, rgb(255, 225, 56));
+    vertical-align: middle;
+    color:aliceblue;
+}
+
+#rank-DIAMOND {
+    background: -webkit-linear-gradient(left, rgb(127, 230, 224), #46b5c4, rgb(94, 177, 255));
+    vertical-align: middle;
+    color:aliceblue;
+    margin-right: 10px;
+}
+
+#profile_rank-DIAMOND {
+    background: -webkit-linear-gradient(left, rgb(127, 230, 224), #46b5c4, rgb(94, 177, 255));
+    vertical-align: middle;
+    color:aliceblue;
+}
+
+#rank-MASTER {
+    background: -webkit-linear-gradient(left, rgb(107, 18, 116), #5e28b6 ,#2162c4);
+    vertical-align: middle;
+    color:aliceblue;
+    margin-right: 10px;
+}
+
+#profile_rank-MASTER {
+    background: -webkit-linear-gradient(left, rgb(107, 18, 116), #5e28b6 ,#2162c4);
+    vertical-align: middle;
+    color:aliceblue;
+}
