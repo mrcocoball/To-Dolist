@@ -6,17 +6,16 @@
 <div class="todo_header">
     <h2>ToDo list</h2>
     <p>해야 할 일을 작성하고 일을 끝냈다면 완료 버튼을 눌러주세요!</p>
-    <div>
-        <a href="{% url 'todos:write' %}">
-            <button type="button" class="w-100 btn btn-create">ToDo 작성</button>     
-        </a>
+    <div class="button_list_2">
+        <button type="button" class="w-100 btn btn-search" id="searchModalCallBtn" style="margin-right: 5px;">검색하기</button>
+        <button type="button" class="w-100 btn btn-create" onclick="location.href='/todos/write'">ToDo 작성</button>    
     </div>
 </div>
 
 <div class="todo_body">
     <hr>
     
-    {% for todo in todos %}
+    {% for todo in page_obj %}
     {% if todo.is_complete%}
     <div class="p-6 rounded completed_todo">
     {% else %}
@@ -57,8 +56,8 @@
     <ul class="pagination justify-content-center"></ul>
         <span>
             {% if page_obj.has_previous %}
-                <a href="?page={{ page_obj.previous_page_number }}">
-                    <button type="button" class="btn btn-page">Previous</button>
+                <a href="?searchType={{ st }}&keyword={{ k }}&startDate={{ s }}&targetDate={{ t }}&page={{ page_obj.previous_page_number }}">
+                    <button type="button" class="btn btn-page">Prev</button>
                 </a>
 
             {% endif %}
@@ -66,12 +65,19 @@
             Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
 
             {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}">
+                <a href="?searchType={{ st }}&keyword={{ k }}&startDate={{ s }}&targetDate={{ t }}&page={{ page_obj.next_page_number }}">
                     <button type="button" class="btn btn-page">Next</button>
                 </a>
             {% endif %}
         </span>
     </ul>
 </div>
+
+<!-- 모달 템플릿 -->
+{% include 'search.html' %}
+
+<!-- 모달 작동 로직-->
+{% load static %}
+<script src="{% static 'js/search_modal.js' %}"></script>
 
 {% endblock %}
