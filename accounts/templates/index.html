@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}To-Dolist{% endblock %}
+
+{% block content %}
+<div class="index_header">
+    <h1>계획 짜기에 진심인 사람들...</h1>
+    <h1>우리는 그들을 To-Do리스트라고</h1>
+    <h1>부르기로 했습니다</h1>
+    <br>
+    <span>평소에 To-Do 리스트를 작성하던 분들</span>
+    <br>
+    <span>일릴릴릴리</span>
+</div>
+
+<div class="row align-items-md-stretch index_body">
+    <div class="col-md-6">
+        <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+            <h2>ToDo 작성</h2>
+            <br>
+            <span>간단하게 회원가입을 하고 계획을 작성해보세요.</span>
+            <br>
+            <span>계획을 실행했다면 완료 처리를 할 수 있습니다.</span>
+            <br>
+            <span>계획을 지인들에게 공유할 수도 있습니다.</span>
+            <br>
+            <br>
+            <a class="btn btn-create" href="/todos/write">ToDo 작성하기</a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+            <h2>계획력 프로필</h2>
+            <br>
+            <span>계획을 얼마나 작성하고 실행했는지 확인하세요.</span>
+            <br>
+            <span>그리고 계획력을 키우고 랭크를 올려보세요.</span>
+            <br>
+            <span>당신의 계획력을 지인들에게 공유할 수 있습니다.</span>
+            <br>
+            <br>
+            <a class="btn btn-create" href="/profiles">프로필 확인</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

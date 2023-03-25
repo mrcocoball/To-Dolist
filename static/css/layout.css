@@ -28,17 +28,20 @@ div.reverse_align {
 
 /* 상단 내비게이션 관련 */
 
-div.user_is_authenticated {
-    justify-content: space-between !important;
-    display: flex !important;
-    vertical-align: middle;
-    align-items: center !important;
-    flex-wrap: nowrap;
-}
-
 #auth-username {
     color:aliceblue;
     margin-right: 10px;
+}
+
+/* Index 관련 */
+
+div.index_header {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+div.index_body {
+    margin-top: 60px
 }
 
 /* Profiles 관련 */
