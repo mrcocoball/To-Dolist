@@ -80,7 +80,7 @@ div.todo_header {
 }
 
 div.todo_body {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 div.todo_box {
@@ -187,3 +187,29 @@ div.pagination_button_list {
     font-size: smaller;
     color:aliceblue;
 }
+
+.btn-page-number {
+    background-color: rgb(255, 255, 255);
+    font-size: smaller;
+    border-color: rgb(31, 59, 121);
+    color:rgb(44, 44, 44);
+}
+
+.btn-page-number:hover {
+    background-color: rgb(156, 186, 250);
+    font-size: smaller;
+    color:aliceblue;
+}
+
+.btn-page-number-activate {
+    background-color: rgb(31, 59, 121);
+    font-size: smaller;
+    color:aliceblue;
+}
+
+.btn-page-number-activate:hover {
+    background-color: rgb(156, 186, 250);
+    font-size: smaller;
+    color:aliceblue;
+}
+

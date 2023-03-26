@@ -17,6 +17,7 @@ class TodoLV(ListView):
     model = Todo
     context_object_name = 'todos'
     paginate_by = 10
+    block_size = 5 # 하단 페이지 목록 수
     template_name = 'todos.html'
 
     def get_queryset(self):
@@ -76,6 +77,12 @@ class TodoLV(ListView):
         context['k'] = keyword
         context['s'] = start_date
         context['t'] = target_date
+
+        # 하단 페이지 수 조정
+        start_index = int((context['page_obj'].number - 1) / self.block_size) * self.block_size
+        end_index = min(start_index + self.block_size, len(context['paginator'].page_range))
+
+        context['page_range'] = context['paginator'].page_range[start_index:end_index]
 
         return context
     
