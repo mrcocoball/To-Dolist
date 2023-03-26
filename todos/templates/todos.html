@@ -53,23 +53,22 @@
 </div>
 
 <div class="d-flex justify-content-center">
-    <ul class="pagination justify-content-center"></ul>
-        <span>
-            {% if page_obj.has_previous %}
-                <a href="?searchType={{ st }}&keyword={{ k }}&startDate={{ s }}&targetDate={{ t }}&page={{ page_obj.previous_page_number }}">
-                    <button type="button" class="btn btn-page">Prev</button>
-                </a>
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <a class="btn btn-page" style="margin-right: 5px;" href="?searchType={{ st }}&keyword={{ k }}&startDate={{ s }}&targetDate={{ t }}&page={{ page_obj.previous_page_number }}">Prev</a>            
+        {% else %}
+        <a class="btn btn-page-disabled" style="margin-right: 5px;" href="#" tabindex="-1">Prev</a>
+        {% endif %}
 
-            {% endif %}
+        {% for page in page_range %}
+        <a class="btn btn-page-number{% if page == page_obj.number %}-activate {% endif %}" href="?searchType={{ st }}&keyword={{ k }}&startDate={{ s }}&targetDate={{ t }}&page={{ page }}">{{ page }}</a>
+        {% endfor %}
 
-            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-
-            {% if page_obj.has_next %}
-                <a href="?searchType={{ st }}&keyword={{ k }}&startDate={{ s }}&targetDate={{ t }}&page={{ page_obj.next_page_number }}">
-                    <button type="button" class="btn btn-page">Next</button>
-                </a>
-            {% endif %}
-        </span>
+        {% if page_obj.has_next %}
+        <a class="btn btn-page" style="margin-left: 5px;" href="?searchType={{ st }}&keyword={{ k }}&startDate={{ s }}&targetDate={{ t }}&page={{ page_obj.next_page_number }}">Next</a>
+        {% else %}
+        <a class="btn btn-page-disabled" style="margin-left: 5px;" href="#" tabindex="-1">Next</a>
+        {% endif %}
     </ul>
 </div>
 
