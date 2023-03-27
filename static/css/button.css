@@ -21,6 +21,16 @@ div.button_list_2 {
     color:aliceblue;
 }
 
+.btn-share {
+    background-color: rgb(94, 4, 26);
+    color:aliceblue;
+}
+
+.btn-share:hover {
+    background-color: rgb(126, 22, 48);
+    color:aliceblue;
+}
+
 .btn-create {
     background-color: rgb(31, 59, 121);
     color:aliceblue;
@@ -148,6 +158,18 @@ div.button_list_2 {
 
 .btn-join:hover {
     background-color: rgb(66, 102, 172);
+    color:aliceblue;
+    margin-bottom: 10px;
+}
+
+.btn-withdrawl {
+    background-color: rgb(53, 53, 53);
+    color:aliceblue;
+    margin-bottom: 10px;
+}
+
+.btn-withdrawl:hover {
+    background-color: rgb(58, 58, 58);
     color:aliceblue;
     margin-bottom: 10px;
 }

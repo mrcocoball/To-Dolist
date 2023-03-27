@@ -88,10 +88,16 @@ class TodoLV(ListView):
     
 
 # DetailView
-class TodoDV(DetailView):
+class TodoDV(OwnerOnlyMixin, DetailView):
 
     model = Todo
     template_name = 'todos_detail.html'
+
+# DetailView
+class TodoShareDV(DetailView):
+
+    model = Todo
+    template_name = 'todos_detail_share.html'
 
 
 # CreateView

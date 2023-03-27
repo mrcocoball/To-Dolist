@@ -121,6 +121,7 @@ ACCOUNT_LOGOUT_ON_GET = True
 LOGIN_REDIRECT_URL = '/todos/'
 LOGOUT_REDIRECT_URL = '/todos/'
 ACCOUNT_PASSWORD_INPUT_RENDER_VALUE = True
+ACCOUNT_SIGNUP_FORM_CLASS = 'accounts.forms.SignupForm'
 
 
 # Password validation

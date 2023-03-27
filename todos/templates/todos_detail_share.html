@@ -60,36 +60,12 @@
         <div class="input_button">
             <button type="button" class="w-100 btn btn-share" id="modalCallBtn">공유하기</button>
         </div>
+        <div class="input_button">
+            <a class="w-100 btn btn-create" href="/todos/write">당신의 계획력을 올리고 싶다면 클릭하세요</a>
+        </div>
     </div>
     <div class="todo_detail_bottom">
         <hr>
-        <div class="justify-content-center">
-            <div class="pagination_button_list">
-                <div class="pagination_button">
-                    {% if object.get_previous %}
-                    <a class="btn btn-page" href="{{ object.get_previous.get_absolute_url }}" title="이전 ToDo">Prev</a>
-                    {{ object.get_previous }}
-                    {% else %}
-                    <a class="btn btn-page-disabled">Prev</a>
-                    첫번째 ToDo입니다
-                    {% endif %}
-                </div>
-                <div class="reverse_align">
-                    <a class="btn btn-page" href="..">목록으로 이동</a>
-                </div>
-            </div>
-            <div class="pagination_button">
-                {% if object.get_next %}
-                <a href="{{ object.get_next.get_absolute_url }}" title="다음 ToDo">
-                    <button type="button" class="btn btn-page">Next</button>
-                </a>
-                {{ object.get_next }}
-                {% else %}
-                <a class="btn btn-page-disabled">Next</a>
-                마지막 ToDo입니다
-                {% endif %}
-            </div> 
-        </div>
     </div>
 </div>
 
