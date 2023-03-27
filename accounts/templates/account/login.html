@@ -31,18 +31,18 @@
       <form id="login_form" class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         <div class="form-floating">
-            {{ form.login | add_class:"form-control"|attr:"placeholder: 이메일"|attr:"autocomplete='false'"|add_error_class:"error" }}
-            <label for="floatingPassword">이메일</label>
+            {% render_field form.login class="form-control" placeholder='이메일' autocomplete='off' %}
+            <label for="floatingInput">이메일</label>
             {% for error in form.login.errors %}
-                <div class="error-message"><p>{{ error }}</p></div>
+            <div class="error-message"><span class="error-span">{{ error }}</span></div>
             {% endfor %}
           </div>
     
         <div class="form-floating">
-            {{ form.password | add_class:"form-control"|attr:"placeholder: 비밀번호, 8자 이상"|attr:"autocomplete='false'"|add_error_class:"error" }}
+            {% render_field form.password class="form-control" placeholder='비밀번호, 8자 이상' autocomplete='off' %}
             <label for="floatingPassword">비밀번호</label>
             {% for error in form.password.errors %}
-            <div class="error-message"><p>{{ error }}</p></div>
+            <div class="error-message"><span class="error-span">{{ error }}</span></div>
             {% endfor %}
         </div>
       </form>
@@ -50,9 +50,7 @@
       <div class="my-4">
         <div class="reverse_align">
           <button form="login_form" type="submit" class="w-100 btn btn-join">로그인</button>
-          <a href="/todos/">
-            <button class="w-100 btn btn-cancel">취소</button>
-        </a>
+          <a class="w-100 btn btn-cancel" href="/todos/">취소</a>
         </div>
       </div>
       
