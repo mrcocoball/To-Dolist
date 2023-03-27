@@ -33,6 +33,7 @@ div.reverse_align {
     margin-right: 10px;
 }
 
+
 /* Index 관련 */
 
 div.index_header {
@@ -41,18 +42,18 @@ div.index_header {
 }
 
 div.index_body {
-    margin-top: 60px
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
 
 /* Profiles 관련 */
 
 div.profile_header {
-    margin-bottom: 30px;
+    margin-bottom: 45px;
 }
 
 div.profile_rank {
-    margin-top: 60px;
-    margin-bottom: 30px;
+    margin-top: 45px;
 }
 
 div.profile_detail {
@@ -66,6 +67,18 @@ div.profile_detail {
 
 div.profile_table_container {
     margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+div.profile_withdrawl {
+    margin-top: 45px;
+    margin-bottom: 60px;
+}
+
+div.withdrawl_box {
+    justify-content: space-between !important;
+    display: flex !important;
+    margin-bottom: 60px;
 }
 
 #profile_table > th, td {

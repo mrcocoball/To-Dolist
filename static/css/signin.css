@@ -12,7 +12,7 @@ body {
 }
 
 .form-signin {
-  max-width: 330px;
+  max-width: 500px;
   padding: 15px;
 }
 
@@ -39,5 +39,9 @@ body {
 }
 
 .error-messages > p {
-    color: crimson;
+  color: crimson;
+}
+
+.error-span {
+  color: crimson;
 }

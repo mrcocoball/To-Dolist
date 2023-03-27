@@ -1,7 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from django.urls import reverse
 from accounts.models import User
 
 def main(request):
@@ -22,4 +20,4 @@ def detail(request, pk):
     profile = User.objects.get(id = pk)
     data = {'profile' : profile}
 
-    return render(request, 'profile.html', data)
+    return render(request, 'profile_share.html', data)

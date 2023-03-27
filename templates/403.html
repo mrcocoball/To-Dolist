@@ -1,10 +1,17 @@
+{% extends 'base.html' %}
+
 {% block content %}
 
-    <h1>접근 권한이 없습니다</h1>
-    <br>
+<body class="text-center">
 
-    <div>
-        <div>{{ exception }}</div>
-    </div>
+    <main class="form-signin w-100 m-auto">
+        <h1>접근 권한이 없습니다</h1>
+        <br>    
+        <div>
+            <div>{{ exception }}</div>
+        </div>    
+    </main>
 
-{% endblock content }
+</body>
+
+{% endblock content %}
