@@ -11,6 +11,9 @@ urlpatterns = [
     # Example: /todos/{id}/
     path('<int:pk>/', views.TodoDV.as_view(), name="detail"),
 
+    # Example: /todos/share/{id}/
+    path('share/<int:pk>/', views.TodoShareDV.as_view(), name="detail_share"),
+
     # Example : /todos/write/
     path('write/', views.TodoCreateView.as_view(), name="write"),
 
