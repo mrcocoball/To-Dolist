@@ -28,34 +28,34 @@
       <form class="signup" id="signup_form" action="{% url 'account_signup' %}" method="post">
         {% csrf_token %}
         <div class="form-floating">
-            {{ form.email | add_class:"form-control"|attr:"placeholder: 이메일"|attr:"autocomplete='false'"|add_error_class:"error" }}
-            <label for="floatingPassword">이메일</label>
+            {% render_field form.email class="form-control" placeholder='이메일' autocomplete='off' %}
+            <label for="floatingInput">이메일</label>
             {% for error in form.email.errors %}
-                <div class="error-message"><p>{{ error }}</p></div>
+            <div class="error-message"><span class="error-span">{{ error }}</span></div>
             {% endfor %}
           </div>
 
         <div class="form-floating">
-            {{ form.username | add_class:"form-control"|attr:"placeholder: 닉네임"|add_error_class:"error" }}
+            {% render_field form.username class="form-control" placeholder='닉네임' autocomplete='off' %}
             <label for="floatingInput">닉네임, 15자 이하</label>
             {% for error in form.username.errors %}
-            <div class="error-message"><p>{{ error }}</p></div>
+            <div class="error-message"><span class="error-span">{{ error }}</span></div>
             {% endfor %}
         </div>
     
         <div class="form-floating">
-            {{ form.password1 | add_class:"form-control"|attr:"placeholder: 비밀번호, 8자 이상"|attr:"autocomplete='false'"|add_error_class:"error" }}
+            {% render_field form.password1 class="form-control" placeholder='비밀번호' autocomplete='off' %}
             <label for="floatingPassword">비밀번호, 8자 이상</label>
             {% for error in form.password1.errors %}
-            <div class="error-message"><p>{{ error }}</p></div>
+            <div class="error-message"><span class="error-span">{{ error }}</span></div>
             {% endfor %}
         </div>
 
         <div class="form-floating">
-            {{ form.password2 | add_class:"form-control"|attr:"placeholder: 비밀번호 확인"|add_error_class:"error" }}
+            {% render_field form.password2 class="form-control" placeholder='비밀번호' autocomplete='off' %}
             <label for="floatingPassword">비밀번호 확인</label>
             {% for error in form.password2.errors %}
-            <div class="error-message"><p>{{ error }}</p></div>
+            <div class="error-message"><span class="error-span">{{ error }}</span></div>
             {% endfor %}
         </div>
   
@@ -64,9 +64,8 @@
         <div class="my-4">
           <div class="reverse_align">
             <button form="signup_form" type="submit" class="w-100 btn btn-join">등록</button>
-            <a href="{% url 'account_login' %}">
-              <button class="w-100 btn btn-cancel">취소</button>
-          </a>
+            <a class="w-100 btn btn-cancel" href="{% url 'account_login' %}">취소</a>
+          </div>
         </div>
     </main>
 

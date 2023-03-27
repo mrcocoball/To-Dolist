@@ -12,11 +12,13 @@ class RankChoice(models.TextChoices):
 
 class User(AbstractUser):
     
+    username = models.CharField(max_length=15, unique=True, error_messages={"unique" : "이미 존재하는 닉네임입니다."})
     first_name = None
     last_name = None
     todo_count = models.BigIntegerField('TODO_COUNT', null=True, default=0)
     todo_complete_count = models.BigIntegerField('TODO_COMPLETE_COUNT', null=True, default=0)
     rank = models.CharField('RANK', max_length=10, choices=RankChoice.choices, default=RankChoice.BRONZE, null=True)
+    social = models.BooleanField('SOCIAL', default=False)
 
     # 랭크 관련 지표
     SILVER_REQUIRED_TODO_COUNT = 10
