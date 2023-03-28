@@ -1,5 +1,5 @@
 
-const DOMAIN = 'http://localhost:9000/' // 외부 배포 시 변경 필요
+const DOMAIN = 'http://192.168.11.13:8000//' // 외부 배포 시 변경 필요
 
 // 모달 관련 변수
 const shareModal = document.getElementById("shareModal")
