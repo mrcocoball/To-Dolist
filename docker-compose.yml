@@ -1,0 +1,45 @@
+version: '2' 
+services: 
+  nginx: 
+    image: nginx:latest 
+    ports: 
+      - "80:80"
+    volumes: 
+      - ./nginx:/nginx.conf.d
+      - ./static:/staticfiles # web의 static 경로와 마운팅
+    depends_on:
+      - web
+  
+  mysql:
+    container_name: mysql
+    build:
+      dockerfile: Dockerfile
+      context: ./database
+    environment:
+      MYSQL_DATABASE: todolist_database
+      MYSQL_ROOT_PASSWORD: ${DJANGO_DATASOURCE_PASSWORD}
+    volumes:
+      - ./database/config:/etc/mysql/conf.d
+      - ./database/init:/docker-entrypoint-initdb.d
+    env_file:
+      - .env
+    ports:
+      - "3309:3309"
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes: 
+      - ./static:/code/static/files/staticfiles # code로 생성 후 마운팅
+    expose:
+      - "8000"
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - mysql
+    links:
+      - mysql:mysql
+    restart: always
