@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base-search.html' %}
 
 {% load static %}
 {% block title %}To-Dolist{% endblock %}
@@ -72,12 +72,4 @@
         {% endif %}
     </ul>
 </div>
-
-<!-- 모달 템플릿 -->
-{% include 'search.html' %}
-
-<!-- 모달 작동 로직-->
-{% load static %}
-<script src="{% static '/js/search_modal.js' %}"></script>
-
 {% endblock %}
