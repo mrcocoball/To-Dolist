@@ -12,9 +12,9 @@
     {% load static %}
     {% load widget_tweaks %} <!--class, attr 속성 추가용-->
     {% load account socialaccount %} <!--소셜 로그인용-->
-    <link rel="stylesheet" href="{% static 'css/layout.css' %}?after">
-    <link rel="stylesheet" href="{% static 'css/signin.css' %}?after">
-    <link rel="stylesheet" href="{% static 'css/button.css' %}?after">
+    <link rel="stylesheet" href="{% static '/css/layout.css' %}?after">
+    <link rel="stylesheet" href="{% static '/css/signin.css' %}?after">
+    <link rel="stylesheet" href="{% static '/css/button.css' %}?after">
 
 </head>
 
@@ -24,6 +24,7 @@
 <body class="text-center">
 
     <main class="form-signin w-100 m-auto">
+        <img class="auth_image" src="{% static '/kakao.png' %}" style="width: 200px; height: 200px;">
         <form method="post">
             {% csrf_token %}
             <h5>카카오 로그인을 진행하려고 합니다. 동의하십니까?</h5>
