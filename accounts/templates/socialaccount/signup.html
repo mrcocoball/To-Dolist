@@ -11,9 +11,9 @@
     
     {% load static %}
     {% load widget_tweaks %} <!--class, attr 속성 추가용-->
-    <link rel="stylesheet" href="{% static 'css/layout.css' %}?after">
-    <link rel="stylesheet" href="{% static 'css/signin.css' %}?after">
-    <link rel="stylesheet" href="{% static 'css/button.css' %}?after">
+    <link rel="stylesheet" href="{% static '/css/layout.css' %}?after">
+    <link rel="stylesheet" href="{% static '/css/signin.css' %}?after">
+    <link rel="stylesheet" href="{% static '/css/button.css' %}?after">
 
 </head>
 
@@ -23,6 +23,7 @@
 <body class="text-center">
 
     <main class="form-signin w-100 m-auto">
+      <img class="auth_image" src="{% static '/sign.png' %}" style="width: 200px; height: 200px;">
       <h1 class="h3 mb-3 fw-normal">카카오 로그인 회원가입</h1>
     
       <form class="signup" id="signup_form" action="{% url 'socialaccount_signup' %}" method="post">

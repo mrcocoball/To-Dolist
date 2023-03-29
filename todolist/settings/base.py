@@ -58,10 +58,12 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.kakao',
+    # CORS 허용을 위한 라이브러리
     'corsheaders',
 ]
 
 MIDDLEWARE = [
+    # CORS 허용을 위한 MIDDLEWARE
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -100,7 +102,6 @@ WSGI_APPLICATION = 'todolist.wsgi.application'
 # AbstarctUser model 지정
 AUTH_USER_MODEL = 'accounts.User' # AbstarctUser
 
-
 # Email 로그인 및 기타 설정 (allauth)
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
@@ -123,10 +124,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 # Custom Login Page
-ACCOUNT_SIGNUP_REDIRECT_URL = '/todos/'
+ACCOUNT_SIGNUP_REDIRECT_URL = '/'
 ACCOUNT_LOGOUT_ON_GET = True
-LOGIN_REDIRECT_URL = '/todos/'
-LOGOUT_REDIRECT_URL = '/todos/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_PASSWORD_INPUT_RENDER_VALUE = True
 ACCOUNT_SIGNUP_FORM_CLASS = 'accounts.forms.SignupForm'
 

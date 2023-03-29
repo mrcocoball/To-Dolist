@@ -45,3 +45,7 @@ body {
 .error-span {
   color: crimson;
 }
+
+.auth_image {
+  margin-bottom: 35px;
+}

@@ -12,9 +12,9 @@
     {% load static %}
     {% load widget_tweaks %} <!--class, attr 속성 추가용-->
     {% load account socialaccount %} <!--소셜 로그인용-->
-    <link rel="stylesheet" href="{% static 'css/layout.css' %}?after">
-    <link rel="stylesheet" href="{% static 'css/signin.css' %}?after">
-    <link rel="stylesheet" href="{% static 'css/button.css' %}?after">
+    <link rel="stylesheet" href="{% static '/css/layout.css' %}?after">
+    <link rel="stylesheet" href="{% static '/css/signin.css' %}?after">
+    <link rel="stylesheet" href="{% static '/css/button.css' %}?after">
 
 </head>
 
@@ -26,6 +26,7 @@
 <body class="text-center">
 
     <main class="form-signin w-100 m-auto">
+      <img class="auth_image" src="{% static '/login.png' %}" style="width: 200px; height: 200px;">
       <h1 class="h3 mb-3 fw-normal">로그인</h1>
     
       <form id="login_form" class="login" method="POST" action="{% url 'account_login' %}">
@@ -50,7 +51,7 @@
       <div class="my-4">
         <div class="reverse_align">
           <button form="login_form" type="submit" class="w-100 btn btn-join">로그인</button>
-          <a class="w-100 btn btn-cancel" href="/todos/">취소</a>
+          <a class="w-100 btn btn-cancel" href="/">취소</a>
         </div>
       </div>
       

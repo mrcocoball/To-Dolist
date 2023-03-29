@@ -12,15 +12,16 @@
     {% load static %}
     {% load widget_tweaks %} <!--class, attr 속성 추가용-->
     {% load account socialaccount %} <!--소셜 로그인용-->
-    <link rel="stylesheet" href="{% static 'css/layout.css' %}?after">
-    <link rel="stylesheet" href="{% static 'css/signin.css' %}?after">
-    <link rel="stylesheet" href="{% static 'css/button.css' %}?after">
+    <link rel="stylesheet" href="{% static '/css/layout.css' %}?after">
+    <link rel="stylesheet" href="{% static '/css/signin.css' %}?after">
+    <link rel="stylesheet" href="{% static '/css/button.css' %}?after">
 
 </head>
 
 <body class="text-center">
 
     <main class="form-signin w-100 m-auto">
+        <img class="auth_image" src="{% static '/sad.png' %}" style="width: 200px; height: 200px;">
         <h1 class="h3 mb-3 fw-normal">정말 탈퇴하시겠습니까?</h1>
         <h6>탈퇴 시 데이터가 전부 삭제되며 복구되지 않습니다.</h6>
     

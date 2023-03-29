@@ -37,13 +37,17 @@ div.reverse_align {
 /* Index 관련 */
 
 div.index_header {
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 30px;
 }
 
 div.index_body {
-    margin-top: 60px;
     margin-bottom: 60px;
+}
+
+.index_header_img {
+    max-width: 90%;
+    max-height: 90%;
 }
 
 /* Profiles 관련 */
@@ -93,7 +97,11 @@ div.todo_header {
 }
 
 div.todo_body {
+    min-height: 600px;
     margin-bottom: 30px;
+    background-image: url('/static/todos.png'); 
+    background-repeat: no-repeat; 
+    background-position: center;
 }
 
 div.todo_box {
