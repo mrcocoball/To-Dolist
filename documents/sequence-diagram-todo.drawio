@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-03-29T08:39:38.079Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="IMC5ujz8W33jyeicj9hi" version="20.8.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-03-30T00:03:47.640Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="SPON7eRM1WuZP5N7a1HG" version="21.1.2" type="github">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
-    <mxGraphModel dx="1194" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -306,31 +306,31 @@
         <mxCell id="5XuNz84cgK7RM7en4Wda-118" value="25. (조건 만족 시) 등급 상승 반영" style="edgeLabel;html=1;align=right;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontStyle=1" parent="1" vertex="1" connectable="0">
           <mxGeometry x="410" y="1308" as="geometry" />
         </mxCell>
-        <mxCell id="Bb-tHRaTWOO9Fnt973y6-5" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="Bb-tHRaTWOO9Fnt973y6-5" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="410" y="610" as="sourcePoint" />
             <mxPoint x="740" y="610" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Bb-tHRaTWOO9Fnt973y6-6" value="24. 해당 회원 계획수 + 1, To-Do 완료수 체크" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontStyle=1" vertex="1" connectable="0" parent="1">
+        <mxCell id="Bb-tHRaTWOO9Fnt973y6-6" value="11. 해당 회원 계획수 + 1, To-Do 완료수 체크" style="edgeLabel;html=1;align=left;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontStyle=1" parent="1" vertex="1" connectable="0">
           <mxGeometry x="410" y="600" as="geometry" />
         </mxCell>
-        <mxCell id="Bb-tHRaTWOO9Fnt973y6-7" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="Bb-tHRaTWOO9Fnt973y6-7" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="740" y="640" as="sourcePoint" />
             <mxPoint x="410" y="640" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Bb-tHRaTWOO9Fnt973y6-8" value="25. To-Do 계획, 완료 수 체크 완료, 조건 만족 시 등급 상승" style="edgeLabel;html=1;align=right;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontStyle=1" vertex="1" connectable="0" parent="1">
+        <mxCell id="Bb-tHRaTWOO9Fnt973y6-8" value="12. To-Do 계획, 완료 수 체크 완료, 조건 만족 시 등급 상승" style="edgeLabel;html=1;align=right;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontStyle=1" parent="1" vertex="1" connectable="0">
           <mxGeometry x="738" y="630" as="geometry" />
         </mxCell>
-        <mxCell id="Bb-tHRaTWOO9Fnt973y6-9" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="Bb-tHRaTWOO9Fnt973y6-9" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="410" y="660" as="sourcePoint" />
             <mxPoint x="110" y="660" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Bb-tHRaTWOO9Fnt973y6-10" value="26. (조건 만족 시) 등급 상승 반영" style="edgeLabel;html=1;align=right;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontStyle=1" vertex="1" connectable="0" parent="1">
+        <mxCell id="Bb-tHRaTWOO9Fnt973y6-10" value="13. (조건 만족 시) 등급 상승 반영" style="edgeLabel;html=1;align=right;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontStyle=1" parent="1" vertex="1" connectable="0">
           <mxGeometry x="410" y="650" as="geometry" />
         </mxCell>
       </root>
