@@ -13,4 +13,4 @@ echo "==> 패키지 다운로드"
 pip install -r /code/requirements.txt
 
 echo "==> 배포!"
-gunicorn todolist.wsgi:application -b 0.0.0.0:8000 --env DJANGO_SETTINGS_MODULE='todolist.settings.prod'
+gunicorn todolist.wsgi:application -b 0.0.0.0:8083 --env DJANGO_SETTINGS_MODULE='todolist.settings.prod'

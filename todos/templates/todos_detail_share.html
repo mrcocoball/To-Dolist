@@ -14,7 +14,7 @@
         {% if object.is_complete%}
         <a class="btn btn-completed">완료됨</a>
         {% else %}
-        <form id="todo_complete_detail" method="post" action="./complete?path={{ object.id }}">
+        <form id="todo_complete_detail" method="post" action="/todos/{{ object.id }}/complete?path={{ object.id }}">
             {% csrf_token %}
             <button type="submit" form="todo_complete_detail" class="btn btn-complete">완료하기</a>
         </form>
@@ -48,10 +48,10 @@
     <div class="reverse_align">
         {% if object.owner == user %}
         <div class="input_button">
-            <a class="w-100 btn btn-update-large" href="./modify/">수정</a>
+            <a class="w-100 btn btn-update-large" href="/todos/{{ object.id }}/modify/">수정</a>
         </div>
         <div class="input_button">
-            <form id="todo_delete_detail" method="post" action="./delete/">
+            <form id="todo_delete_detail" method="post" action="/todos/{{ object.id }}/delete/">
                 {% csrf_token %}
                 <button type="submit" form="todo_delete_detail" class="w-100 btn btn-delete-large">삭제</button>
             </form>
