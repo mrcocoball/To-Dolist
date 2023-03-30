@@ -3,7 +3,7 @@ services:
   nginx: 
     image: nginx:latest 
     ports: 
-      - "80:80"
+      - "83:83"
     volumes: 
       - ./nginx:/nginx.conf.d
       - ./static:/staticfiles # web의 static 경로와 마운팅
@@ -33,9 +33,9 @@ services:
     volumes: 
       - ./static:/code/static/files/staticfiles # code로 생성 후 마운팅
     expose:
-      - "8000"
+      - "8083"
     ports:
-      - "8000:8000"
+      - "8083:8083"
     env_file:
       - .env
     depends_on:
